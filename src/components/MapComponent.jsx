@@ -7,11 +7,13 @@ import { GoogleMap, useJsApiLoader, useLoadScript } from '@react-google-maps/api
 const MapComponent = ({center,zoom}) => {
 const{isLoaded} = useLoadScript({googleMapsApiKey:"AIzaSyBRo6y8Zv-tKoU-7gtfYbbpyFP-tY9OsKM"})
 if(!isLoaded) return <div>loading</div>
-return <div>map</div>
+return <Map />
 }
 export default MapComponent;
 
-
+function Map () {
+return <GoogleMap zoom = {10} center ={{lat: 44,lng: -80}} mapContainerClassName ="map_container"></GoogleMap>
+}
 
 
 
