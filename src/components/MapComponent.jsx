@@ -1,7 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import {
   GoogleMap,
   useLoadScript,
+  Marker
 } from "@react-google-maps/api";
 
 const MapComponent = ({ center, zoom }) => {
@@ -13,13 +14,31 @@ const MapComponent = ({ center, zoom }) => {
 };
 export default MapComponent;
 
+
+
+
+
+
+
+
 function Map() {
+
+  const [markers, setMarkers] = useState([{ lat: 44, lng: -80 }, { lat: 44.001, lng: -80.001 }]);
+
+  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+
   return (
     <GoogleMap
       zoom={10}
-      center={{ lat: 44, lng: -80 }}
+      center={center}
       mapContainerClassName="map_container"
-    ></GoogleMap>
+    >
+      {markers.map((marker, index) => {
+        //change key to be unique station_id
+        return <Marker key={index} position={marker} />
+      })}
+
+    </GoogleMap>
   );
 }
 
