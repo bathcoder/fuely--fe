@@ -1,28 +1,31 @@
-import React, {useRef, useState, useEffect} from 'react'
-import { GoogleMap, useJsApiLoader, useLoadScript } from '@react-google-maps/api';
+import React, { useRef, useState, useEffect } from "react";
+import {
+  GoogleMap,
+  useLoadScript,
+} from "@react-google-maps/api";
 
-
-
-
-const MapComponent = ({center,zoom}) => {
-const{isLoaded} = useLoadScript({googleMapsApiKey:"AIzaSyBRo6y8Zv-tKoU-7gtfYbbpyFP-tY9OsKM"})
-if(!isLoaded) return <div>loading</div>
-return <Map />
-}
+const MapComponent = ({ center, zoom }) => {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  });
+  if (!isLoaded) return <div>loading</div>;
+  return <Map />;
+};
 export default MapComponent;
 
-function Map () {
-return <GoogleMap zoom = {10} center ={{lat: 44,lng: -80}} mapContainerClassName ="map_container"></GoogleMap>
+function Map() {
+  return (
+    <GoogleMap
+      zoom={10}
+      center={{ lat: 44, lng: -80 }}
+      mapContainerClassName="map_container"
+    ></GoogleMap>
+  );
 }
-
-
-
-
-
 
 // const ref = useRef(null);
 //     const [map, setMap] = useState();
-    
+
 //     useEffect(() => {
 //       if (ref.current && !map) {
 //         setMap(new window.google.maps.Map(ref.current, {}));
@@ -42,20 +45,6 @@ return <GoogleMap zoom = {10} center ={{lat: 44,lng: -80}} mapContainerClassName
 //       );
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const containerStyle = {
 //   width: '400px',
 //   height: '400px'
@@ -70,8 +59,8 @@ return <GoogleMap zoom = {10} center ={{lat: 44,lng: -80}} mapContainerClassName
 // const apiKey = "AIzaSyBRo6y8Zv-tKoU-7gtfYbbpyFP-tY9OsKM"
 //   const { isLoaded } = useJsApiLoader({
 //     id: 'google-map-script',
-   
-//     googleMapsApiKey: 
+
+//     googleMapsApiKey:
 //   })
 
 //   const [map, setMap] = React.useState(null)
