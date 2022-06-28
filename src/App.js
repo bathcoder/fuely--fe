@@ -1,15 +1,13 @@
-import MapComponent from './components/MapComponent' 
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+
 import './App.css';
-import Marker from './components/Marker'
-
-
+import Home from './components/Home';
+import Header from './components/Header';
 
 function App() {
   return (
  <div>
- <MapComponent />
-
+<Header />
+<Home />
     </div>
   );
 }

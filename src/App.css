@@ -6,3 +6,28 @@
   height:100vh;
   width:100vw
 }
+
+.StationListCard{
+  
+  display:flex;
+  border-radius: 1rem;
+  border-color: darkslateblue;
+  border-style: solid;
+  width:80vw;
+  height:20vh;
+  background-color: peachpuff;
+
+  top:0;
+  left:0;
+  z-index:1;
+}
+
+.station_address{
+  display:block;
+text-align: left;}
+
+.station-prices{
+  display:block;
+  text-align: right;
+  padding-left: 70rem;
+}
