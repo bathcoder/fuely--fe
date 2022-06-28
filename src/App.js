@@ -1,11 +1,13 @@
-import MapComponent from './components/MapComponent' 
+
 import './App.css';
+import Home from './components/Home';
+import Header from './components/Header';
 
 function App() {
   return (
  <div>
- <MapComponent />
-
+<Header />
+<Home />
     </div>
   );
 }
