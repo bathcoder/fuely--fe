@@ -7,7 +7,7 @@ import {
 import { useState, useMemo } from "react";
 import fuelIcon from "../images/fuel-pump_26fd.png";
 
-function MapConfig({allStations}) {
+function MapConfig({allStations, coords}) {
 //   const [markers, setMarkers] = useState([
 //     { lat: 44, lng: -80 },
 //     { lat: 44.001, lng: -80.001 },
@@ -16,6 +16,7 @@ function MapConfig({allStations}) {
 //   ]);
 //line 18 needs to change, to users current location/search bar entry in home component, eventually.
   const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+  // const center = useMemo(() => (coords), []);
 
   return (
     <GoogleMap zoom={10} center={center} mapContainerClassName="map_container">

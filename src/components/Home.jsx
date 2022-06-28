@@ -2,9 +2,12 @@ import { useState } from "react";
 import Filter from "./Filter";
 import Map from "./Map";
 import List from "./List";
+import GeoLocation from "./GeoLocation";
 
 const Home = () => {
+    //state for how data is displayed (map or list)
   const [displayType, setDisplayType] = useState("map");
+    //state for array of all station objects (from API)
   const [allStations, setAllStations] = useState([
     {
       station_id: "1",
@@ -53,12 +56,15 @@ const Home = () => {
       },
     },
   ]);
+    //state for user location coordinates
+    const [coords, setCoords] = useState()
 
   return (
     <div>
+        <GeoLocation setCoords={setCoords} />
       <Filter setDisplayType={setDisplayType} displayType={displayType} />
       {displayType === "map" ? (
-        <Map allStations={allStations} />
+        <Map allStations={allStations} coords={coords} />
       ) : (
         <List allStations={allStations} />
       )}
