@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker, useJsApiLoader} from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import fuelIcon from "../images/fuel-pump_26fd.png";
 
 const MapComponent = ({ center, zoom }) => {
@@ -27,7 +32,15 @@ function Map() {
     <GoogleMap zoom={10} center={center} mapContainerClassName="map_container">
       {markers.map((marker, index) => {
         //change key to be unique station_id
-        return <Marker className = "marker" key={index} position={marker} label={"pricey"} icon = {fuelIcon}  style = {{"grey"}} />;
+        return (
+          <Marker
+            className="marker"
+            key={index}
+            position={marker}
+            label={"pricey"}
+            icon={{url: fuelIcon, scaledSize: new window.google.maps.Size(50, 50)}}
+          />
+        );
       })}
     </GoogleMap>
   );
