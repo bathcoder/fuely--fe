@@ -5,8 +5,9 @@ import List from "./List";
 import fetchLocation from "../utils/fetchLocation";
 
 
-const Home = () => {
 
+const Home = () => {
+  
   const [displayType, setDisplayType] = useState("map");
   const [allStations, setAllStations] = useState([
     {
@@ -60,7 +61,12 @@ const Home = () => {
     const [coords, setCoords] = useState({lat: 59.9139, lng:10.7522})
     useEffect(() => {fetchLocation(setCoords)}, [])
 
-    
+  //some function here to fetch all stations from API pssing user location coordinates and user. 
+
+
+
+
+
   return (
     <div>
      
