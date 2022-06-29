@@ -6,12 +6,7 @@ import {
 import fuelIcon from "../images/fuel-pump_26fd.png";
 
 function MapConfig({allStations, coords}) {
-//   const [markers, setMarkers] = useState([
-//     { lat: 44, lng: -80 },
-//     { lat: 44.001, lng: -80.001 },
-//     { lat: 44.001, lng: -80.004 },
-//     { lat: 44.001, lng: -80.008 },
-//   ]);
+
 //line 18 needs to change, to users current location/search bar entry in home component, eventually.
   // const center = useMemo(() => ({ allStations:[], user:default, lat: 44, lng: -80 }), []);
 
