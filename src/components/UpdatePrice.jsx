@@ -8,12 +8,15 @@ const UpdatePrice = ({setPrice, setPriceMessage}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    //optimistic rendering that only accepts a price format of 123.4 for example and not 123.4.5 or 4564322 etc
 const isValid = /^\d\d\d\.\d$/.test(newPrice);
 if (!isValid) {setNewPrice(""); setPriceMessage("please enter price in pence, ie. 198.9")}
 if (isValid){setPrice(newPrice); setPriceMessage("Thanks for submitting your price!")}
 
-  setNewPrice("")
+ 
   //  postNewPrice(newPrice) --- posting to database. this is a placeholder for the real thing
+  // catch error to reverse price if post fails
+  setNewPrice("")
   }
   return (
     <div>
