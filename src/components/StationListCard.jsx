@@ -18,15 +18,4 @@ const StationListCard = ({ station }) => {
 
 export default StationListCard;
 
-// {
-//     station_id: "1",
-//     station_name: "Station 1",
-//     lat: 44,
-//     lng: -79,
-//     fuel_type: "petrol",
-//     street_address: "123 Main St",
-//     price_petrol_main: 198.9,
-//     price_petrol_five: {
-//       price1: { price: 198.9, time: "PICK SOME GOOD FORMAT FOR THIS", trust: 99 },
-//       price2: { price: 198.9, time: "PICK SOME GOOD FORMAT FOR THIS", trust: 99 },
-// }}])
+
