@@ -16,10 +16,12 @@
   width:80vw;
   height:20vh;
   background-color: peachpuff;
-
+  justify-content: space-between ;
   top:0;
   left:0;
   z-index:1;
+  padding: 5px 5px;
+  margin: 5px 0px;
 }
 
 .station_address{
@@ -29,5 +31,4 @@ text-align: left;}
 .station-prices{
   display:block;
   text-align: right;
-  padding-left: 70rem;
 }

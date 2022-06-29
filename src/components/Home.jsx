@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import Filter from "./Filter";
 import Map from "./Map";
 import List from "./List";
-import GeoLocation from "./GeoLocation";
+import fetchLocation from "../utils/fetchLocation";
+
 
 const Home = () => {
     //state for how data is displayed (map or list)
@@ -57,11 +58,12 @@ const Home = () => {
     },
   ]);
     //state for user location coordinates
-    const [coords, setCoords] = useState()
-
+    const [coords, setCoords] = useState({lat: 59.9139, lng:10.7522})
+    useEffect(() => {fetchLocation(setCoords)}, [])
+console.log(`home coords: ${coords}`);
   return (
     <div>
-        <GeoLocation setCoords={setCoords} />
+     
       <Filter setDisplayType={setDisplayType} displayType={displayType} />
       {displayType === "map" ? (
         <Map allStations={allStations} coords={coords} />
@@ -73,3 +75,8 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+// {'name': 'ESSO TESCO OLTON EXPRESS', 'station_id': 'ChIJ7_8A2iS6cEgR-FhkV2HcyoA', 'address': '11 Warwick Rd, Olton, Solihull, Birmingham B92 7HS',
+//  'coordinates': {'lat': 52.4426908, 'lng': -1.8116267}, 'price': 0, 'votes': 0}

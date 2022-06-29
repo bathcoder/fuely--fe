@@ -1,10 +1,8 @@
 import {
   GoogleMap,
-  useLoadScript,
   Marker,
-  useJsApiLoader,
 } from "@react-google-maps/api";
-import { useState, useMemo } from "react";
+
 import fuelIcon from "../images/fuel-pump_26fd.png";
 
 function MapConfig({allStations, coords}) {
@@ -15,12 +13,12 @@ function MapConfig({allStations, coords}) {
 //     { lat: 44.001, lng: -80.008 },
 //   ]);
 //line 18 needs to change, to users current location/search bar entry in home component, eventually.
-  // const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
-  console.log(`passed cords: ${coords}`);
-  const center = useMemo(() => (coords), []);
+  // const center = useMemo(() => ({ allStations:[], user:default, lat: 44, lng: -80 }), []);
 
+  const center = coords;
+  console.log(`passed cords: ${center}`);
   return (
-    <GoogleMap zoom={10} center={center} mapContainerClassName="map_container">
+    <GoogleMap zoom={15} center={center} mapContainerClassName="map_container">
       {allStations.map((station, index) => {
         //change key to be unique station_id
         return (
