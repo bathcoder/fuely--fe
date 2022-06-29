@@ -6,9 +6,8 @@ import fetchLocation from "../utils/fetchLocation";
 
 
 const Home = () => {
-    //state for how data is displayed (map or list)
+
   const [displayType, setDisplayType] = useState("map");
-    //state for array of all station objects (from API)
   const [allStations, setAllStations] = useState([
     {
       station_id: "1",
@@ -60,7 +59,8 @@ const Home = () => {
     //state for user location coordinates
     const [coords, setCoords] = useState({lat: 59.9139, lng:10.7522})
     useEffect(() => {fetchLocation(setCoords)}, [])
-console.log(`home coords: ${coords}`);
+
+    
   return (
     <div>
      

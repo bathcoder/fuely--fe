@@ -1,13 +1,12 @@
 import {
-  GoogleMap,
+
   useLoadScript,
-  Marker,
-  useJsApiLoader,
+
 } from "@react-google-maps/api";
-import fuelIcon from "../images/fuel-pump_26fd.png";
+
 import MapConfig from "./MapConfig";
 
-const Map = ({ allStations, center, zoom, coords }) => {
+const Map = ({ allStations, coords }) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
