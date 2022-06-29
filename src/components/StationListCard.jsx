@@ -4,7 +4,7 @@ import UpdatePrice from "./UpdatePrice";
 const StationListCard = ({ station }) => {
 
   const [price, setPrice] = useState(station.price_petrol_main);
-console.log(station.price_petrol_main)
+  const [priceMessage, setPriceMessage] = useState("Update price:")
 
   return (
     <>
@@ -17,7 +17,8 @@ console.log(station.price_petrol_main)
         <div className="station-prices">
           {<h1>{price}</h1>}
           {<h3>{station.updated}</h3>}
-         <UpdatePrice setPrice = {setPrice} price = {price}/> 
+          <h3>{priceMessage}</h3>
+         <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage}/> 
         </div>
       </div>
     </>
