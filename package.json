@@ -17,6 +17,7 @@
     "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-geolocated": "^4.0.3",
+    "react-hook-geolocation": "^1.0.11",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

@@ -15,8 +15,9 @@ function MapConfig({allStations, coords}) {
 //     { lat: 44.001, lng: -80.008 },
 //   ]);
 //line 18 needs to change, to users current location/search bar entry in home component, eventually.
-  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
-  // const center = useMemo(() => (coords), []);
+  // const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+  console.log(`passed cords: ${coords}`);
+  const center = useMemo(() => (coords), []);
 
   return (
     <GoogleMap zoom={10} center={center} mapContainerClassName="map_container">
