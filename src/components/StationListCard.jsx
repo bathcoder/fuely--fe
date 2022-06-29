@@ -1,14 +1,10 @@
 import { useState } from "react";
+import UpdatePrice from "./UpdatePrice";
 
 const StationListCard = ({ station }) => {
-  const [newPrice, setNewPrice] = useState("");
-console.log(station.price_petrol_main)
-console.log(newPrice)
-const handleSubmit = (event) => {
-  event.preventDefault();
-  station.price_petrol_main = newPrice;
-}
 
+  const [price, setPrice] = useState(station.price_petrol_main);
+console.log(station.price_petrol_main)
 
   return (
     <>
@@ -19,22 +15,9 @@ const handleSubmit = (event) => {
           {<h3>{station.distance_from_center} miles</h3>}
         </div>
         <div className="station-prices">
-          {<h1>{station.price_petrol_main}</h1>}
+          {<h1>{price}</h1>}
           {<h3>{station.updated}</h3>}
-          <form onSubmit ={handleSubmit}>
-            <label>
-              <input
-                type="text"
-                id="price-input"
-                name="new-price"
-                placeholder="what price can you see?"
-                value={newPrice}
-                onChange={(event) => setNewPrice(event.target.value)}
-              />
-            </label>
-       
-          </form>
-          <button type="submit">enter fuely</button>
+         <UpdatePrice setPrice = {setPrice} price = {price}/> 
         </div>
       </div>
     </>
