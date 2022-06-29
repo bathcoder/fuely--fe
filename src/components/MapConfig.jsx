@@ -11,7 +11,7 @@ function MapConfig({allStations, coords}) {
   // const center = useMemo(() => ({ allStations:[], user:default, lat: 44, lng: -80 }), []);
 
   const center = coords;
-  console.log(`passed cords: ${center}`);
+
   return (
     <GoogleMap zoom={15} center={center} mapContainerClassName="map_container">
       {allStations.map((station, index) => {

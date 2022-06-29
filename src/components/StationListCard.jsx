@@ -1,4 +1,13 @@
+import {useEffec}
+
 const StationListCard = ({ station }) => {
+const[newPrice, setNewPrice] = useState(station.price_petrol_main);
+
+
+
+
+
+
   return (
     <>
       <div className="StationListCard">
@@ -11,6 +20,13 @@ const StationListCard = ({ station }) => {
         {<h1>{station.price_petrol_main}</h1>}
         {<h3>{station.updated}</h3>}
         </div>
+      </div>
+      <div>
+        <form>
+          <label>
+            <
+          </label>
+        </form>
       </div>
     </>
   );
