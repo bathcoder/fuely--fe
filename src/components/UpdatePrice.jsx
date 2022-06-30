@@ -11,10 +11,12 @@ const UpdatePrice = ({setPrice, setPriceMessage, station_id}) => {
     //optimistic rendering that only accepts a price format of 123.4 for example and not 123.4.5 or 4564322 etc
 const isValid = /^\d\d\d\.\d$/.test(newPrice);
 if (!isValid) {setNewPrice(""); setPriceMessage("please enter price in pence, ie. 198.9")}
-if (isValid){setPrice(newPrice); setPriceMessage("Thanks for submitting your price!")}
+if (isValid){setPrice(newPrice); setPriceMessage("Thanks for submitting your price!")
 
- //CHANGE TO ADD REAL USER
-   putNewPrice(station_id, newPrice, 'guestuser')
+//CHANGE TO ADD REAL USER
+  putNewPrice(station_id, newPrice, 'guestuser')
+}
+
   // catch error to reverse price if post fails
   // setNewPrice("")
   }

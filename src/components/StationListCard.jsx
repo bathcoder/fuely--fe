@@ -12,13 +12,15 @@ const StationListCard = ({ station }) => {
     <>
       <div className="StationListCard">
         <div className="station-address">
-          {<h2>{station.name}</h2>}
-          {<h2>{station.address}</h2>}
-          {<h3>{'ADD DISTANCE'} miles</h3>}
+          <h2>{station.name}</h2>
+          <h2>{station.address}</h2>
+          <h3>{'ADD DISTANCE'} miles</h3>
         </div>
         <div className="station-prices">
-          {<h1>{'199.9'}</h1>}
-          {<h3>{'NEED TIME'}</h3>}
+          {/* SET REAL PRICE */}
+          <h1>{'199.9'}</h1>
+          {/* SET REAL TIME */}
+          <h3>{'NEED TIME'}</h3>
           <h3>{priceMessage}</h3>
          <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id}/> 
         </div>

@@ -15,8 +15,10 @@ export function getAllStations(coords, user){
 
 //figure out if user is string or object?
 export function putNewPrice(station_id,newprice, user){
+    console.log('1')
     return stationApi.put("/price", {station_id: station_id, price: newprice, user: user})
     .then(({data}) => {
+        console.log('2')
         console.log('PUT RETURN DATA >>>', data)
     })
     .catch((err) => {
