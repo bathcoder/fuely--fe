@@ -1,8 +1,8 @@
 import { useState } from "react";
-// import { postNewPrice } from "../utils/api";
+import { putNewPrice } from "../utils/api";
 
 
-const UpdatePrice = ({setPrice, setPriceMessage}) => {
+const UpdatePrice = ({setPrice, setPriceMessage, station_id}) => {
   const [newPrice, setNewPrice] = useState("");
   
 
@@ -13,10 +13,10 @@ const isValid = /^\d\d\d\.\d$/.test(newPrice);
 if (!isValid) {setNewPrice(""); setPriceMessage("please enter price in pence, ie. 198.9")}
 if (isValid){setPrice(newPrice); setPriceMessage("Thanks for submitting your price!")}
 
- 
-  //  postNewPrice(newPrice) --- posting to database. this is a placeholder for the real thing
+ //CHANGE TO ADD REAL USER
+   putNewPrice(station_id, newPrice, 'guestuser')
   // catch error to reverse price if post fails
-  setNewPrice("")
+  // setNewPrice("")
   }
   return (
     <div>

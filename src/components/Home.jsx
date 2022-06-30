@@ -12,71 +12,28 @@ const Home = () => {
   const user = {user: "guest"}
 
   const [displayType, setDisplayType] = useState("map");
-  const [allStations, setAllStations] = useState([
-    {
-      station_id: "1",
-      station_name: "Station 1",
-      lat: 44,
-      lng: -80,
-      fuel_type: "petrol",
-      street_address: "123 Main St",
-      distance_from_center: 1.2,
-      price_petrol_main: 198.9,
-      updated: "22/6/22 14:32",
-      price_petrol_five: {
-        price1: {
-          price: 198.9,
-          time: "PICK SOME GOOD FORMAT FOR THIS",
-          trust: 99,
-        },
-        price2: {
-          price: 198.9,
-          time: "PICK SOME GOOD FORMAT FOR THIS",
-          trust: 99,
-        },
-      },
-    },
-    {
-      station_id: "2",
-      station_name: "Station 1",
-      lat: 44,
-      lng: -79,
-      fuel_type: "petrol",
-      street_address: "123 Main St",
-      distance_from_center: 1.1,
-      price_petrol_main: 198.9,
-      updated: "22/6/22 14:00",
-      price_petrol_five: {
-        price1: {
-          price: 198.9,
-          time: "PICK SOME GOOD FORMAT FOR THIS",
-          trust: 99,
-        },
-        price2: {
-          price: 198.9,
-          time: "PICK SOME GOOD FORMAT FOR THIS",
-          trust: 99,
-        },
-      },
-    },
-  ]);
+  const [allStations, setAllStations] = useState([]);
+
+
     //state for user location coordinates
+    //change to not have a default, set loading behavaiour
     const [coords, setCoords] = useState({lat: 59.9139, lng:10.7522})
 
     //this updates the location with users coords on iniital render if user allows location
     useEffect(() => {
       fetchLocation(setCoords)
-      
     }, [])
 
 
-    //Sends API request for all stations array.
-    // useEffect(() => {
-    //   getAllStations(coords, user)
 
-    // }, [])
-
-  //some function here to fetch all stations from API pssing user location coordinates and user. 
+    // Sends API request for all stations array when coords changes, like if theyre set by geolocate.
+    useEffect(() => {
+      getAllStations(coords, user)
+      .then(data => {
+        setAllStations(data.allStations)
+      }
+      )
+    }, [coords])
 
 
 
