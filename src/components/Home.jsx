@@ -70,12 +70,12 @@ const Home = () => {
     }, [])
 
 
-    //Sends API request for all stations array.
-    // useEffect(() => {
-    //   getAllStations(coords, user)
-
-    // }, [])
-
+    // Sends API request for all stations array.
+    useEffect(() => {
+      getAllStations(coords, user).then((data) => setAllStations(data.allStations)
+    )
+    }, [])
+    
   //some function here to fetch all stations from API pssing user location coordinates and user. 
 
 

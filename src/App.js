@@ -8,28 +8,28 @@ import {auth} from './services/firebase';
 import Login from './components/Login';
 
 function App() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
 
-  useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      setUser(user);
-    })
+  // useEffect(() => {
+  //   auth.onAuthStateChanged(user => {
+  //     setUser(user);
+  //   })
 
     //old
     // firebase.auth().onAuthStateChanged(user => {
     //   setUser(user);
     // })
-  }, [])
+  // }, [])
 
-  console.log(user);
+  // console.log(user);
 
 
   return (
  <div>
-  {user ? <TEST user={user} /> : <Login />}
-{/* <Header />
-<Home /> */}
+  {/* {user ? <TEST user={user} /> : <Login />} */}
+<Header />
+<Home />
     </div>
   );
 }
