@@ -4,7 +4,13 @@ const stationApi = axios.create({baseURL: "http://fuely.herokuapp.com/api"})
 
 
 export function getAllStations(coords, user){
-    return stationApi.post("/stations", {lat: coords.lat, lng: coords.lng, user: user.user})
+    return stationApi.post("/stations", {lat: coords.lat, lng: coords.lng, user: user})
+    .then(({data}) => {
+        console.log(data, "<<<<<<<<<")
+    })
+    .catch((err) => {
+        console.log(err, "Error here <<<<<<<<")
+    })
 }
 
 export function postNewPrice(station_id,newprice, user){
