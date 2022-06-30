@@ -1,12 +1,10 @@
-import {useEffec}
+import { useState } from "react";
+import UpdatePrice from "./UpdatePrice";
 
 const StationListCard = ({ station }) => {
-const[newPrice, setNewPrice] = useState(station.price_petrol_main);
 
-
-
-
-
+  const [price, setPrice] = useState(station.price_petrol_main);
+  const [priceMessage, setPriceMessage] = useState("Update price:")
 
   return (
     <>
@@ -17,21 +15,14 @@ const[newPrice, setNewPrice] = useState(station.price_petrol_main);
           {<h3>{station.distance_from_center} miles</h3>}
         </div>
         <div className="station-prices">
-        {<h1>{station.price_petrol_main}</h1>}
-        {<h3>{station.updated}</h3>}
+          {<h1>{price}</h1>}
+          {<h3>{station.updated}</h3>}
+          <h3>{priceMessage}</h3>
+         <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage}/> 
         </div>
-      </div>
-      <div>
-        <form>
-          <label>
-            <
-          </label>
-        </form>
       </div>
     </>
   );
 };
 
 export default StationListCard;
-
-
