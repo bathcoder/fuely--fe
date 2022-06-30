@@ -13,7 +13,7 @@ function MapConfig({allStations, coords}) {
   const center = coords;
 
   return (
-    <GoogleMap zoom={3} center={center} mapContainerClassName="map_container">
+    <GoogleMap zoom={13} center={center} mapContainerClassName="map_container">
       {allStations.map((station, index) => {
         //change key to be unique station_id
         return (
@@ -22,7 +22,7 @@ function MapConfig({allStations, coords}) {
             key={station.station_id}
             position={{ lat: station.coordinates.lat, lng: station.coordinates.lng }}
             //ADD PRICE WHEN BE DONE WITH IT, chhange text to be price from station object
-            label={{ text: '195.9', fontSize: "15px", fontWeight: "bold" }}
+            label={{ text: `${station.price[station.price.length-1].price}p`, fontSize: "15px", fontWeight: "bold" }}
             icon={{
               url: fuelIcon,
               scaledSize: new window.google.maps.Size(50, 50),

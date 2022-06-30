@@ -17,10 +17,10 @@ const StationListCard = ({ station }) => {
           <h3>{'ADD DISTANCE'} miles</h3>
         </div>
         <div className="station-prices">
-          {/* SET REAL PRICE */}
-          <h1>{'199.9'}</h1>
-          {/* SET REAL TIME */}
-          <h3>{'NEED TIME'}</h3>
+          {/* SET REAL PRICE, USING LAST ENTRY ATM.  PRICE OR USER_PRICE??????? */}
+          <h1>{station.price[station.price.length-1].price}p</h1>
+          {/* SET REAL TIME, USING LAST ENTRY ATM */}
+          <h3>last updated: {station.price[station.price.length-1].time_submitted}</h3>
           <h3>{priceMessage}</h3>
          <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id}/> 
         </div>

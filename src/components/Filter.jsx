@@ -1,7 +1,7 @@
 
 //address search bar
 //fuel type button (nice to have)
-//radius option
+//radius option (nice to have)
 //map/list button
 const Filter = ({displayType, setDisplayType}) => {
 
