@@ -1,6 +1,6 @@
 import React from 'react';
 import { auth } from '../services/firebase'
-import '../App.css';
+import '../styles/App.css';
 
 const TEST = ({ user }) => {
   return (

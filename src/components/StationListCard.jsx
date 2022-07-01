@@ -28,17 +28,17 @@ const StationListCard = ({ station, coords }) => {
   return (
     <>
       <div className="StationListCard">
-        <div className="station-address">
-          <h2>{station.name}</h2>
-          <h2>{station.address}</h2>
-          <h3>{'ADD DISTANCE'} miles</h3>
+        <div className="StationInfo">
+          <h3 className="StationName">{station.name}</h3>
+          <h5 className="StationAddress">{station.address}</h5>
+          <p>{'ADD DISTANCE'} miles</p>
         </div>
         <div className="station-prices">
           {/* SET REAL PRICE, USING LAST ENTRY ATM.  PRICE OR USER_PRICE??????? */}
-          <h1>{price}p</h1>
+          <h1 className="FuelPrice">{price}p</h1>
           {/* SET REAL TIME, USING LAST ENTRY ATM */}
-          <h3>last updated: {timeSubmitted}</h3>
-          <h3>{priceMessage}</h3>
+          <h5 className="FuelTimeUpdated">last updated: {timeSubmitted}</h5>
+          <h5 className="FuelUpdateMessage">{priceMessage}</h5>
          <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id} setTimeSubmitted={setTimeSubmitted}/> 
         </div>
       </div>

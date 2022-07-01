@@ -34,7 +34,7 @@ const UpdatePrice = ({
     <div>
       <form onSubmit={handleSubmit}>
         <label id="price-label">
-          <input
+          <input className="SubmitPriceForm"
             type="number"
             id="price-input"
             name="new-price"
@@ -44,7 +44,7 @@ const UpdatePrice = ({
             onChange={(event) => setNewPrice(event.target.value)}
           />
         </label>
-        <button type="submit">submit</button>
+        <button className="UpdatePriceButton" type="submit">submit</button>
       </form>
     </div>
   );

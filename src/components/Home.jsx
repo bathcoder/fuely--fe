@@ -4,6 +4,7 @@ import Map from "./Map";
 import List from "./List";
 import fetchLocation from "../utils/fetchLocation";
 import {getAllStations} from "../utils/api";
+import "../styles/App.css"
 
 import { getCoordsFromAddress } from "../utils/api";
 
@@ -74,7 +75,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className="Home">
      
       <Filter setDisplayType={setDisplayType} displayType={displayType} setCoords={setCoords} allStations={allStations} setAllStations={setAllStations} />
 
