@@ -49,7 +49,7 @@ const Home = () => {
   return (
     <div>
      
-      <Filter setDisplayType={setDisplayType} displayType={displayType} setCoords={setCoords} />
+      <Filter setDisplayType={setDisplayType} displayType={displayType} setCoords={setCoords} allStations={allStations} setAllStations={setAllStations} />
 
 {
         displayType === "map" ? 
