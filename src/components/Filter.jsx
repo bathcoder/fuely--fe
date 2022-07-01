@@ -5,7 +5,7 @@ import { getCoordsFromAddress } from "../utils/api";
 //fuel type button (nice to have)
 //radius option (nice to have)
 //map/list button
-const Filter = ({displayType, setDisplayType, setCoords}) => {
+const Filter = ({displayType, setDisplayType, setCoords, allStations, setAllStations}) => {
 
     const mapListToggle = () => {
         if (displayType === "map") {
@@ -26,6 +26,34 @@ const Filter = ({displayType, setDisplayType, setCoords}) => {
         )
     }
 
+    //function to sort allStations by price ascending
+    const sortStationsByPrice = () => {
+        let copiedStations = [...allStations];
+        console.log(copiedStations[3].price[copiedStations[3].price.length-1].price);
+
+        copiedStations.sort( (first, second) => {
+
+           if (first.price[first.price.length-1].price > second.price[second.price.length-1].price) {
+              return 1;
+           }
+
+           if (first.price[first.price.length-1].price < second.price[second.price.length-1].price) {
+              return -1;
+           }
+
+           return 0;
+
+        });
+
+        console.log(copiedStations)
+        setAllStations(copiedStations);
+
+
+
+
+    }
+
+
 
 
 
@@ -39,6 +67,8 @@ const Filter = ({displayType, setDisplayType, setCoords}) => {
                 <input type="text" name="address" placeholder="Enter address" />
                 <button type="submit">Search</button>
             </form>
+
+            <button onClick={sortStationsByPrice}>Sort by price</button>
             
         </div>
     );

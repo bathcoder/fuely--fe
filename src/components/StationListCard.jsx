@@ -9,7 +9,13 @@ import { useEffect } from "react";
 
 const StationListCard = ({ station, coords }) => {
 
-  const [price, setPrice] = useState(station.price_petrol_main);
+  //state for price that is shown to user. initially it is taken from the database, then updated optimistically
+  const [price, setPrice] = useState(station.price[station.price.length-1].price);
+
+  //state for time last updated that is shown to user. initially it is taken from the database, then updated optimistically
+  const [timeSubmitted, setTimeSubmitted] = useState(station.price[station.price.length-1].time_submitted);
+
+
   const [priceMessage, setPriceMessage] = useState("Update price:")
 
 //TESTING TO GET DISTANCE FROM coords (current user coords) to each station
@@ -29,11 +35,11 @@ const StationListCard = ({ station, coords }) => {
         </div>
         <div className="station-prices">
           {/* SET REAL PRICE, USING LAST ENTRY ATM.  PRICE OR USER_PRICE??????? */}
-          <h1>{station.price[station.price.length-1].price}p</h1>
+          <h1>{price}p</h1>
           {/* SET REAL TIME, USING LAST ENTRY ATM */}
-          <h3>last updated: {station.price[station.price.length-1].time_submitted}</h3>
+          <h3>last updated: {timeSubmitted}</h3>
           <h3>{priceMessage}</h3>
-         <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id}/> 
+         <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id} setTimeSubmitted={setTimeSubmitted}/> 
         </div>
       </div>
     </>
