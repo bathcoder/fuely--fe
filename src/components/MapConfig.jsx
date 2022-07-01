@@ -14,6 +14,19 @@ function MapConfig({allStations, coords}) {
 
   return (
     <GoogleMap zoom={13} center={center} mapContainerClassName="map_container">
+
+      <Marker
+        className="marker"
+        key='youAreHere'
+        position={center}
+        label={{ text: 'You are here', fontSize: "15px", fontWeight: "bold" }}
+            icon={{
+              // url: fuelIcon,
+              scaledSize: new window.google.maps.Size(50, 50),
+              labelOrigin: new window.google.maps.Point(20, -10),
+            }}
+            />
+
       {allStations.map((station, index) => {
         //change key to be unique station_id
         return (
