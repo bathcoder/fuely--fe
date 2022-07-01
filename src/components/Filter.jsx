@@ -1,9 +1,11 @@
+import { getCoordsFromAddress } from "../utils/api";
+
 
 //address search bar
 //fuel type button (nice to have)
-//radius option
+//radius option (nice to have)
 //map/list button
-const Filter = ({displayType, setDisplayType}) => {
+const Filter = ({displayType, setDisplayType, setCoords}) => {
 
     const mapListToggle = () => {
         if (displayType === "map") {
@@ -13,6 +15,18 @@ const Filter = ({displayType, setDisplayType}) => {
         }
     }
 
+    //onsubmit for address search bar uses getCoordsFromAddress to set coords state
+    const handleAddressSubmit = (e) => {
+        e.preventDefault();
+        getCoordsFromAddress(e.target.address.value)
+        .then(data => {
+            console.log(data)
+            setCoords(data)
+        }
+        )
+    }
+
+
 
 
     return (
@@ -20,6 +34,11 @@ const Filter = ({displayType, setDisplayType}) => {
             <button onClick={mapListToggle}>
                 {displayType === "map" ? "View List" : "View Map"}
             </button>
+
+            <form onSubmit={(e) => handleAddressSubmit(e)}>
+                <input type="text" name="address" placeholder="Enter address" />
+                <button type="submit">Search</button>
+            </form>
             
         </div>
     );

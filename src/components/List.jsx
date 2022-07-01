@@ -1,10 +1,10 @@
 import StationListCard from "./StationListCard";
 
-const List = ({ allStations }) => {
+const List = ({ allStations, coords }) => {
   return (
     <div>
       {allStations.map((station) => {
-        return <StationListCard key={station.station_id} station={station} />;
+        return <StationListCard key={station.station_id} station={station} coords={coords} />;
       })}
     </div>
   );

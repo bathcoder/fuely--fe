@@ -5,10 +5,15 @@ import List from "./List";
 import fetchLocation from "../utils/fetchLocation";
 import {getAllStations} from "../utils/api";
 
+import { getCoordsFromAddress } from "../utils/api";
+
+import { getDistanceTime } from "../utils/api";
+
 
 
 const Home = () => {
   
+  //remove this at some point
   const user = {user: "guest"}
 
   const [displayType, setDisplayType] = useState("map");
@@ -17,7 +22,7 @@ const Home = () => {
 
     //state for user location coordinates
     //change to not have a default, set loading behavaiour
-    const [coords, setCoords] = useState({lat: 59.9139, lng:10.7522})
+    const [coords, setCoords] = useState(null)
 
     //this updates the location with users coords on iniital render if user allows location
     useEffect(() => {
@@ -28,11 +33,13 @@ const Home = () => {
 
     // Sends API request for all stations array when coords changes, like if theyre set by geolocate.
     useEffect(() => {
-      getAllStations(coords, user)
-      .then(data => {
-        setAllStations(data.allStations)
+      if (coords) {
+        getAllStations(coords, user)
+        .then(data => {
+          setAllStations(data.allStations)
+        }
+        )
       }
-      )
     }, [coords])
 
 
@@ -42,12 +49,14 @@ const Home = () => {
   return (
     <div>
      
-      <Filter setDisplayType={setDisplayType} displayType={displayType} />
-      {displayType === "map" ? (
-        <Map allStations={allStations} coords={coords} />
-      ) : (
-        <List allStations={allStations} />
-      )}
+      <Filter setDisplayType={setDisplayType} displayType={displayType} setCoords={setCoords} />
+
+{
+        displayType === "map" ? 
+        <Map allStations={allStations} coords={coords} /> : 
+        <List allStations={allStations} coords={coords}/>
+      
+      }
     </div>
   );
 };
