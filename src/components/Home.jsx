@@ -5,6 +5,10 @@ import List from "./List";
 import fetchLocation from "../utils/fetchLocation";
 import {getAllStations} from "../utils/api";
 
+import { getCoordsFromAddress } from "../utils/api";
+
+import { getDistanceTime } from "../utils/api";
+
 
 
 const Home = () => {
@@ -14,7 +18,6 @@ const Home = () => {
 
   const [displayType, setDisplayType] = useState("map");
   const [allStations, setAllStations] = useState([]);
-
 
 
     //state for user location coordinates
@@ -46,12 +49,12 @@ const Home = () => {
   return (
     <div>
      
-      <Filter setDisplayType={setDisplayType} displayType={displayType} />
+      <Filter setDisplayType={setDisplayType} displayType={displayType} setCoords={setCoords} />
 
 {
         displayType === "map" ? 
         <Map allStations={allStations} coords={coords} /> : 
-        <List allStations={allStations} />
+        <List allStations={allStations} coords={coords}/>
       
       }
     </div>

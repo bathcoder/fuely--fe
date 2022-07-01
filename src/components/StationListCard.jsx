@@ -1,12 +1,23 @@
 import { useState } from "react";
 import UpdatePrice from "./UpdatePrice";
 
-const StationListCard = ({ station }) => {
+
+
+// import { getDistanceTime } from "../utils/api";
+
+import { useEffect } from "react";
+
+const StationListCard = ({ station, coords }) => {
 
   const [price, setPrice] = useState(station.price_petrol_main);
   const [priceMessage, setPriceMessage] = useState("Update price:")
 
-  console.log('HIHIHI', station)
+//TESTING TO GET DISTANCE FROM coords (current user coords) to each station
+  // useEffect(()=> {
+  //   console.log('hello', station)
+  //   getDistanceTime(coords, {lat: station.coordinates.lat, lng: station.coordinates.lng})
+  // }, [coords])
+
 
   return (
     <>
@@ -30,3 +41,4 @@ const StationListCard = ({ station }) => {
 };
 
 export default StationListCard;
+
