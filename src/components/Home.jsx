@@ -20,6 +20,12 @@ const Home = () => {
   const [allStations, setAllStations] = useState([]);
 
 
+  //state which holds prices that are being shown on map/list
+  const [shownPrices, setShownPrices] = useState();
+
+
+
+
     //state for user location coordinates
     //change to not have a default, set loading behavaiour
     const [coords, setCoords] = useState(null)
@@ -37,8 +43,29 @@ const Home = () => {
         getAllStations(coords, user)
         .then(data => {
           setAllStations(data.allStations)
+
+          
+
         }
         )
+        .then(()=> {
+          let newShownPrices = {};
+
+          allStations.forEach(station => {
+            // let stationObject = {}
+            // stationObject.station_id = station.station_id;
+            // stationObject.price = station.price[station.price.length-1].price;
+            newShownPrices[station.station_id] = station.price[station.price.length-1].price;
+          }
+          )
+          console.log('newShownPrices', newShownPrices)
+          setShownPrices(newShownPrices);
+
+
+        })
+        .then(() => {
+          console.log('he;llo', shownPrices)
+        })
       }
     }, [coords])
 
