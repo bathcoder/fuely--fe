@@ -1,4 +1,4 @@
-import "../styles/Header.css"
+import { Link } from "react-router-dom";
 
 //this should contain:
 //1. LOGO AND NAME
@@ -7,9 +7,14 @@ import "../styles/Header.css"
 
 const Header = () => {
     return (
-        <h1 className="header">
+        <div className="header">
+        <h1>
         Fuely
         </h1>
+        <p>
+            <Link to={"/login"}>Log in / Sign up</Link>
+        </p>
+        </div>
     );
 };
 

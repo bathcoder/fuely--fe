@@ -1,6 +1,5 @@
 import "./styles/App.css";
-import Home from "./components/Home";
-import Header from "./components/Header";
+import Main from "./components/Main";
 
 import React from "react";
 import Signup from "./firebaseauth/Signup";
@@ -15,16 +14,17 @@ import PrivateRoute from "./components/PrivateRoute";
 function App() {
   return (
     <>
-      <Container
+      {/* <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+      > */}
+        {/* <div className="w-100" style={{ maxWidth: "400px" }}> */}
           <Router>
             <AuthProvider>
               <Routes>
+                <Route path="/" element={<Main />} />
                 <Route
-                  path="/"
+                  path="/user"
                   element={
                     <PrivateRoute>
                       <Dashboard />
@@ -36,16 +36,13 @@ function App() {
               </Routes>
             </AuthProvider>
           </Router>
-          {/* <Signup /> */}
-        </div>
-      </Container>
+        {/* </div> */}
+      {/* </Container> */}
     </>
   );
 
-  {
-    /* <Header />
-<Home /> */
-  }
+
+
 }
 
 export default App;

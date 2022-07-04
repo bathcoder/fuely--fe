@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UpdatePrice from "./UpdatePrice";
+import { useAuth } from "../firebaseauth/AuthContext";
 
 
 
@@ -8,6 +9,8 @@ import UpdatePrice from "./UpdatePrice";
 import { useEffect } from "react";
 
 const StationListCard = ({ station, coords }) => {
+
+  const {currentUser} = useAuth()
 
   //state for price that is shown to user. initially it is taken from the database, then updated optimistically
   const [price, setPrice] = useState(station.price[station.price.length-1].price);
@@ -39,7 +42,12 @@ const StationListCard = ({ station, coords }) => {
           {/* SET REAL TIME, USING LAST ENTRY ATM */}
           <h5 className="FuelTimeUpdated">last updated: {timeSubmitted}</h5>
           <h5 className="FuelUpdateMessage">{priceMessage}</h5>
-         <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id} setTimeSubmitted={setTimeSubmitted}/> 
+
+        {currentUser ? <UpdatePrice setPrice = {setPrice} setPriceMessage = {setPriceMessage} station_id={station.station_id} setTimeSubmitted={setTimeSubmitted}/> : <p>HELLO</p> }
+
+
+
+
         </div>
       </div>
     </>
