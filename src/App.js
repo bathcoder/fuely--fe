@@ -1,37 +1,33 @@
-import './styles/App.css';
-import Home from './components/Home';
-import Header from './components/Header';
-import TEST from './components/TEST';
+import "./styles/App.css";
+import Home from "./components/Home";
+import Header from "./components/Header";
 
-import { useState, useEffect } from 'react';
-import {auth} from './services/firebase';
-import Login from './components/Login';
+import React from "react";
+import Signup from "./firebaseauth/Signup";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
+import { AuthProvider } from "./firebaseauth/AuthContext";
 
 function App() {
-  // const [user, setUser] = useState(null);
-
-
-  // useEffect(() => {
-  //   auth.onAuthStateChanged(user => {
-  //     setUser(user);
-  //   })
-
-    //old
-    // firebase.auth().onAuthStateChanged(user => {
-    //   setUser(user);
-    // })
-  // }, [])
-
-  // console.log(user);
-
-
   return (
- <div>
-  {/* {user ? <TEST user={user} /> : <Login />} */}
-<Header />
-<Home />
-    </div>
+    <>
+     <AuthProvider>
+      <Container
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}
+        >
+        <div className="w-100" style={{ maxWidth: "400px" }}>
+          <Signup />
+        </div>
+      </Container>
+    </AuthProvider>
+    </>
   );
+
+  {
+    /* <Header />
+<Home /> */
+  }
 }
 
 export default App;
