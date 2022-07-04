@@ -1,4 +1,4 @@
-
+import "../styles/Header.css"
 
 //this should contain:
 //1. LOGO AND NAME
@@ -7,9 +7,9 @@
 
 const Header = () => {
     return (
-        <header className="header">
+        <h1 className="header">
         Fuely
-        </header>
+        </h1>
     );
 };
 

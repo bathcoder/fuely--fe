@@ -1,4 +1,5 @@
 import { getCoordsFromAddress } from "../utils/api";
+import "../styles/App.css"
 
 
 //address search bar
@@ -58,8 +59,8 @@ const Filter = ({displayType, setDisplayType, setCoords, allStations, setAllStat
 
 
     return (
-        <div>
-            <button onClick={mapListToggle}>
+        <div className="filter">
+            <button className="viewButton" onClick={mapListToggle}>
                 {displayType === "map" ? "View List" : "View Map"}
             </button>
 
@@ -68,7 +69,7 @@ const Filter = ({displayType, setDisplayType, setCoords, allStations, setAllStat
                 <button type="submit">Search</button>
             </form>
 
-            <button onClick={sortStationsByPrice}>Sort by price</button>
+            <button className="viewButton" onClick={sortStationsByPrice}>Sort by price</button>
             
         </div>
     );

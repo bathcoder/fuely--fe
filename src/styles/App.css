@@ -1,0 +1,85 @@
+:root {
+  --color1: #393d71;
+  --color2: whitesmoke;
+  --color3: green;
+  --color4: pink;
+  --color5: yellow;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Home {
+  background-color: var(--color2)
+}
+
+.App {
+  text-align: center;
+}
+
+.map_container{
+  margin: 3%;
+  height:90vh;
+  width:auto;
+  border: solid black 2px;
+  border-radius: 10%;
+
+}
+
+.StationListCard{
+  
+  display:flex;
+  border-radius: 1rem;
+  border-color: darkslateblue;
+  border-style: solid;
+  width:80vw;
+  height:20vh;
+  background-color: rgba(33, 209, 180, 0.644);
+  justify-content: space-between ;
+  top:0;
+  left:0;
+  z-index:1;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
+}
+
+.station_address{
+  display:block;
+text-align: left;}
+
+.station-prices{
+  display:block;
+  text-align: right;
+}
+
+.viewButton {
+  margin: 2% 5%;
+  background-color: #4cafa2;
+  color: #fff;
+  border: black solid 1px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.filter {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.UpdatePriceButton{
+  margin:0.2rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
