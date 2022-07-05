@@ -19,25 +19,17 @@ function App() {
         style={{ minHeight: "100vh" }}
       > */}
         {/* <div className="w-100" style={{ maxWidth: "400px" }}> */}
+                {/* </div> */}
+              {/* </Container> */}
           <Router>
             <AuthProvider>
               <Routes>
                 <Route path="/" element={<Main />} />
-                <Route
-                  path="/user"
-                  element={
-                    <PrivateRoute>
-                      <Dashboard />
-                    </PrivateRoute>
-                  }
-                ></Route>
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
               </Routes>
             </AuthProvider>
           </Router>
-        {/* </div> */}
-      {/* </Container> */}
     </>
   );
 

@@ -31,12 +31,17 @@ const StationListCard = ({ station }) => {
           <h5 className="StationAddress">{station.address}</h5>
         </div>
         <div className="station-prices">
-          {/* SET REAL PRICE, USING LAST ENTRY ATM.  PRICE OR USER_PRICE??????? */}
           <h1 className="FuelPrice">{price}p</h1>
-          {/* SET REAL TIME, USING LAST ENTRY ATM */}
           <h5 className="FuelTimeUpdated">last updated: {timeSubmitted}</h5>
 
-          {currentUser && priceClicked === "clicked" ? (
+          {
+          //IF USER IS LOGGED IN, SHOW BUTTON TO UPDATE PRICE
+          currentUser && priceClicked === "not clicked" ? (
+            <p onClick={handlePriceClick}>Is this price incorrect?
+            Click to submit up-to-date price</p>
+          )
+          //IF USER HAS CLICKED INITIALLY, SHOW UPDATE PRICE FORM
+          : currentUser && priceClicked === "clicked" ? (
             <>
               <h5 className="FuelUpdateMessage">{priceMessage}</h5>
               <UpdatePrice
@@ -47,12 +52,13 @@ const StationListCard = ({ station }) => {
                 setPriceClicked={setPriceClicked}
               />
             </>
-          ) : currentUser && priceClicked === "not clicked" ? (
-            <p onClick={handlePriceClick}>Is this price incorrect?</p>
+          //IF USER HAS SUBMITTED NEW PRICE, SHOW SUCCESS MESSAGE
           ) : currentUser && priceClicked === "submitted" ? (
             <h5 className="FuelUpdateMessage">{priceMessage}</h5>
-          ) : (
-            <p>HELLO</p>
+          ) : 
+          //IF USER IS NOT LOGGED IN, SHOW NOTHING
+          (
+            null
           )}
         </div>
       </div>
