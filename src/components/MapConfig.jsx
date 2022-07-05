@@ -28,7 +28,6 @@ function MapConfig({allStations, coords}) {
             />
 
       {allStations.map((station, index) => {
-        //change key to be unique station_id
         return (
           <Marker
             className="marker"

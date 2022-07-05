@@ -3,6 +3,8 @@ import { useLoadScript } from "@react-google-maps/api";
 import MapConfig from "./MapConfig";
 
 const Map = ({ allStations, coords }) => {
+  
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
@@ -11,12 +13,18 @@ const Map = ({ allStations, coords }) => {
 
   return (
     <div className="container">
-
-      {/* <div className="pulse" ></div> */}
-      <div className="box">
-        <MapConfig allStations={allStations} coords={coords} />,
-      </div>
-
+      {!allStations.length ? (
+        <>
+          <div className="pulse"></div>
+          <div className="map-box">
+            <MapConfig allStations={allStations} coords={coords} />,
+          </div>{" "}
+        </>
+      ) : (
+        <div className="map-box">
+          <MapConfig allStations={allStations} coords={coords} />,
+        </div>
+      )}
     </div>
   );
 };

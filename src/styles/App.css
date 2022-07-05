@@ -6,44 +6,42 @@
   --color5: yellow;
 }
 
-
 * {
   margin: 0;
   padding: 0;
 }
 
 .Home {
-  background-color: var(--color2)
+  background-color: var(--color2);
 }
 
 .App {
   text-align: center;
 }
 
-
-.StationListCard{
-  
-  display:flex;
+.StationListCard {
+  display: flex;
   border-radius: 1rem;
   border-color: darkslateblue;
   border-style: solid;
-  width:80vw;
-  height:20vh;
+  width: 80vw;
+  height: 20vh;
   background-color: rgba(33, 209, 180, 0.644);
-  justify-content: space-between ;
-  top:0;
-  left:0;
-  z-index:1;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 1;
   padding: 0.5rem;
   margin: 1rem 0.5rem;
 }
 
-.station_address{
-  display:block;
-text-align: left;}
+.station_address {
+  display: block;
+  text-align: left;
+}
 
-.station-prices{
-  display:block;
+.station-prices {
+  display: block;
   text-align: right;
 }
 
@@ -65,14 +63,14 @@ text-align: left;}
   margin: 0.5rem;
 }
 
-.UpdatePriceButton{
-  margin:0.2rem;
+.UpdatePriceButton {
+  margin: 0.2rem;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .header {
@@ -85,62 +83,48 @@ input[type=number]::-webkit-outer-spin-button {
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
-
-  
- 
 }
 
-.map_container{
+.map_container {
   margin: 0%;
-  height:90vh;
-  width:auto;
+  height: 90vh;
+  width: auto;
   border: solid black 2px;
   border-radius: 7%;
-
-}
-
-.overlay {
-
-}
-
-.box {
-
-  opacity: 0.3;
-
-}
-
-.container {
-
 }
 
 /**
  * The following styles are for the loader graphic
  */
 .pulse {
-   width: 70.4px;
-   height: 70.4px;
-   position: relative;
-   transform: rotate(45deg);
+  width: 10rem;
+  height: 10rem;
+  position: fixed;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 45%;
+  z-index: 1;
+  opacity: 70%;
 }
 
 .pulse:before,
 .pulse:after {
-   content: "";
-   position: absolute;
-   inset: 0;
-   border-radius: 50% 50% 0 50%;
-   background: #474bff;
-   -webkit-mask: radial-gradient(circle 17.6px at 50% 50%,#0000 94%,#000);
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 0 50%;
+  background: #474bff;
+  -webkit-mask: radial-gradient(circle 17.6px at 50% 50%, #0000 94%, #000);
 }
 
 .pulse:after {
-   animation: pulse-ytk0dhhg 1s infinite;
-   transform: perspective(528px) translateZ(0px);
+  animation: pulse-ytk0dhhg 1s infinite;
+  transform: perspective(528px) translateZ(0px);
 }
 
 @keyframes pulse-ytk0dhhg {
-   to {
-      transform: perspective(528px) translateZ(264px);
-      opacity: 0;
-   }
+  to {
+    transform: perspective(528px) translateZ(264px);
+    opacity: 0;
+  }
 }
