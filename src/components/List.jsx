@@ -11,7 +11,19 @@ const List = ({ allStations, coords }) => {
     <div>
       {currentUser ? null : <LoginMessage />}
 
-      {allStations.map((station) => {
+
+      
+      {
+      !allStations.length ? (
+  <>
+  <div className="listBackground">
+
+    <div className="pulse overlay" />
+  
+  </div>
+  </>
+) : 
+      (allStations.map((station) => {
         return (
           <StationListCard
             key={station.station_id}
@@ -19,7 +31,8 @@ const List = ({ allStations, coords }) => {
             coords={coords}
           />
         );
-      })}
+      }))
+      }
     </div>
   );
 };

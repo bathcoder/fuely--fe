@@ -15,10 +15,10 @@ const Map = ({ allStations, coords }) => {
     <div className="container">
       {!allStations.length ? (
         <>
-          <div className="pulse"></div>
+          <div className="pulse overlay"></div>
           <div className="map-box">
             <MapConfig allStations={allStations} coords={coords} />,
-          </div>{" "}
+          </div>
         </>
       ) : (
         <div className="map-box">
