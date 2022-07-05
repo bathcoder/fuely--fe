@@ -6,6 +6,7 @@ const UpdatePrice = ({
   setPriceMessage,
   station_id,
   setTimeSubmitted,
+  setPriceClicked,
 }) => {
   const [newPrice, setNewPrice] = useState("");
 
@@ -20,7 +21,7 @@ const UpdatePrice = ({
     if (isValid) {
       setPrice(newPrice);
       setPriceMessage("Thanks for submitting your price! Please wait while it is verified.");
-
+      setPriceClicked("submitted")
       setTimeSubmitted(new Date().toLocaleString())
 
       //CHANGE TO ADD REAL USER
