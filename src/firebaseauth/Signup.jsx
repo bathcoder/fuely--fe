@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
-import { useAuth } from './AuthContext.js'
+import { useAuth } from '../firebaseauth/AuthContext'
+import {Link, useNavigate} from "react-router-dom"
 
 export default function Signup() {
 
@@ -10,8 +11,8 @@ export default function Signup() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-
-  const {signup} = useAuth()
+  const navigate = useNavigate();
+  const {signup} = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -23,7 +24,9 @@ export default function Signup() {
     try {
       setError('')
       setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
+      await signup(emailRef.current.value, passwordRef.current.value);
+      navigate("/")
+
     } catch {
       setError('Failed to create an account')
     }
@@ -57,7 +60,10 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? Log in
+        Already have an account? <Link to={"/login"}>Log in</Link>
+      </div>
+      <div className="w-100 text-center mt-2">
+        <Link to={"/"}>Back to Fuely </Link>
       </div>
     
     
