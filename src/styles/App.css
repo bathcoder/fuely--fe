@@ -33,7 +33,7 @@
   border-color: var(--color1);
   border-style: solid;
   width: 80vw;
-  height: 20vh;
+  height: 30vh;
   /* background-color: var(--color4); */
   justify-content: space-between;
   top: 0;
@@ -130,6 +130,18 @@
   padding-top: 0.5rem;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 .viewButton {
   margin: 2% 5%;
@@ -165,16 +177,15 @@ margin:0.1rem;
 }
 
 
-
-
-
-
-
-
-
-.UpdatePriceButton {
-  margin: 0.2rem;
+.UpdatePriceForm {
+  z-index: 9999;
 }
+
+
+
+
+
+
 
 
 .listBackground {
@@ -191,7 +202,7 @@ margin:0.1rem;
 
 .map_container {
   margin: 0%;
-  height: 90vh;
+  height: 76vh;
   width: auto;
   border: solid var(--color1) 2px;
   border-radius: 3%;
@@ -228,7 +239,7 @@ margin:0.1rem;
 
 
 .spinner {
-   position: absolute;
+  position: absolute;
    width: 20px;
    height: 20px;
    top:50%;
@@ -275,13 +286,13 @@ margin:0.1rem;
 }
 
 .spinner div:nth-child(6) {
-   --delay: 0.6;
+  --delay: 0.6;
    --rotation: 216;
    --translation: 150;
 }
 
 .spinner div:nth-child(7) {
-   --delay: 0.7;
+  --delay: 0.7;
    --rotation: 252;
    --translation: 150;
 }
@@ -290,7 +301,7 @@ margin:0.1rem;
    --delay: 0.8;
    --rotation: 288;
    --translation: 150;
-}
+  }
 
 .spinner div:nth-child(9) {
    --delay: 0.9;
@@ -346,3 +357,17 @@ margin:0.1rem;
   }
 
 }
+
+.SubmitPriceForm {
+  width: 50%;
+  font-size: 0.7rem;
+}
+  .UpdatePriceButton {
+    margin: 0rem;
+    font-size: 0.7rem;
+    width:auto;
+  }
+
+  .FuelUpdateMessage {
+    font-size: 0.8rem;
+  }

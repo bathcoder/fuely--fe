@@ -20,7 +20,7 @@ const UpdatePrice = ({
     }
     if (isValid) {
       setPrice(newPrice);
-      setPriceMessage("Thanks for submitting your price! Please wait while it is verified.");
+      setPriceMessage("Thanks for submitting your price!");
       setPriceClicked("submitted")
       setTimeSubmitted(new Date().toLocaleString())
 
@@ -32,14 +32,14 @@ const UpdatePrice = ({
     // setNewPrice("")
   };
   return (
-    <div>
+    <div className="updatePriceForm">
       <form onSubmit={handleSubmit}>
         <label id="price-label">
           <input className="SubmitPriceForm"
             type="number"
             id="price-input"
             name="new-price"
-            placeholder="Enter new price"
+            placeholder="New price"
             value={newPrice}
             step="any"
             onChange={(event) => setNewPrice(event.target.value)}

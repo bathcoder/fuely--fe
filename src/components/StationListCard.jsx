@@ -17,7 +17,7 @@ const StationListCard = ({ station }) => {
     station.price[station.price.length - 1].time_submitted
   );
 
-  const [priceMessage, setPriceMessage] = useState("Update price:");
+  const [priceMessage, setPriceMessage] = useState("");
 
   const handlePriceClick = () => {
     setPriceClicked("clicked");
@@ -30,9 +30,8 @@ const StationListCard = ({ station }) => {
           currentUser ? handlePriceClick : () => {}
         }
 
-      
-      
-      
+
+
       >
         <div className="StationInfo">
           <h3 className="StationName">{station.name}</h3>
