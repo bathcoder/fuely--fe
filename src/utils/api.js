@@ -60,3 +60,6 @@ export function getDistanceTime(start, end) {
       console.log(err, "Error here <<<<<<<<");
     });
 }
+
+
+// https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${start.lat},${start.lng}&destinations=${end.lat},${end.lng}&key=${process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}

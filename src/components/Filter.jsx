@@ -60,19 +60,40 @@ const Filter = ({
 
   return (
     <div className="filter">
-      <button className="viewButton" onClick={mapListToggle}>
-        {displayType === "map" ? "View List" : "View Map"}
-      </button>
+      
+      <div className="addressForm">
+        <form onSubmit={(e) => handleAddressSubmit(e)}>
+          <input className="addressInput" type="text" name="address" placeholder="Enter an address" />
+          <button className="addressButton" type="submit">Search</button>
+        </form>
+      </div>
 
-      <form onSubmit={(e) => handleAddressSubmit(e)}>
-        <input type="text" name="address" placeholder="Enter address" />
-        <button type="submit">Search</button>
-      </form>
-      {displayType === "map" ? null : (
-        <button className="viewButton" onClick={sortStationsByPrice}>
-          Sort by price
+      <div className="viewMapButton">
+        <button
+          className="viewButton ListSortButtons mapListButton"
+          onClick={mapListToggle}
+        >
+          {displayType === "map" ? "View List" : "View Map"}
+
         </button>
-      )}
+        </div>
+
+        {displayType === "map" ? (
+          // <div className="sortButton"></div>
+          null
+
+        ) : (
+          <div className='sortByPriceButton'>
+            <button
+              className="viewButton ListSortButtons sortButton"
+              onClick={sortStationsByPrice}
+            >
+              Sort by price
+            </button>
+          </div>
+
+        )}
+
     </div>
   );
 };

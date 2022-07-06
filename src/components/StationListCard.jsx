@@ -25,7 +25,15 @@ const StationListCard = ({ station }) => {
 
   return (
     <>
-      <div className="StationListCard">
+      <div className="StationListCard"
+        onClick={
+          currentUser ? handlePriceClick : () => {}
+        }
+
+      
+      
+      
+      >
         <div className="StationInfo">
           <h3 className="StationName">{station.name}</h3>
           <h5 className="StationAddress">{station.address}</h5>
@@ -35,13 +43,8 @@ const StationListCard = ({ station }) => {
           <h5 className="FuelTimeUpdated">last updated: {timeSubmitted}</h5>
 
           {
-          //IF USER IS LOGGED IN, SHOW BUTTON TO UPDATE PRICE
-          currentUser && priceClicked === "not clicked" ? (
-            <p onClick={handlePriceClick}>Is this price incorrect?
-            Click to submit up-to-date price</p>
-          )
           //IF USER HAS CLICKED INITIALLY, SHOW UPDATE PRICE FORM
-          : currentUser && priceClicked === "clicked" ? (
+          currentUser && priceClicked === "clicked" ? (
             <>
               <h5 className="FuelUpdateMessage">{priceMessage}</h5>
               <UpdatePrice
@@ -60,6 +63,10 @@ const StationListCard = ({ station }) => {
           (
             null
           )}
+
+
+
+
         </div>
       </div>
     </>

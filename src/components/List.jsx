@@ -8,30 +8,38 @@ const List = ({ allStations, coords }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      {currentUser ? null : <LoginMessage />}
+    <div className="allStationCards">
+      <LoginMessage />
 
-
-      
-      {
-      !allStations.length ? (
-  <>
-  <div className="listBackground">
-
-    <div className="pulse overlay" />
-  
-  </div>
-  </>
-) : 
-      (allStations.map((station) => {
-        return (
-          <StationListCard
-            key={station.station_id}
-            station={station}
-            coords={coords}
-          />
-        );
-      }))
+      {!allStations.length ? (
+        <>
+          <div className="listBackground">
+           
+            <div className="spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </>
+      ) : (
+        allStations.map((station) => {
+          return (
+            <StationListCard
+              key={station.station_id}
+              station={station}
+              coords={coords}
+            />
+          );
+        })
+      )
       }
     </div>
   );

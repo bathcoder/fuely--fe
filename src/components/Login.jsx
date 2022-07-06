@@ -30,7 +30,7 @@ export default function Login() {
   return (
     <>
       <Container className="d-flex align-items-center justify-content-center">
-        <Card>
+        <Card className="loginBox">
           <Card.Body>
             <h2 className="text-center mb-4">Log In</h2>
             {error && <Alert variant="danger">{error}</Alert>}
