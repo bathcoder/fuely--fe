@@ -18,17 +18,23 @@
 }
 
 .App {
-  text-align: center;
+  background-image: linear-gradient(var(--color2), var(--color3));
+  height: 100vh;
+}
+
+.title{
+  font-size: 3rem;
 }
 
 .StationListCard {
   display: flex;
+  background: radial-gradient(closest-side, var(--color5), var(--color3));
   border-radius: 1rem;
   border-color: var(--color1);
   border-style: solid;
   width: 80vw;
   height: 20vh;
-  background-color: var(--color4);
+  /* background-color: var(--color4); */
   justify-content: space-between;
   top: 0;
   left: 0;
@@ -49,62 +55,20 @@
 
 .viewButton {
   margin: 2% 5%;
-  background-color: var(--color3);
+  
   color: var(--color1);
-  border: var(--color1) solid 1px;
+  /* border: var(--color1) solid 1px; */
+  border: solid 2px red;
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+  background: radial-gradient(closest-side, var(--color3), var(--color5));
+  width: 5rem;
+  height: 4rem;
 }
-
-/* .filter {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-} */
-
-@media only screen and (min-width: 650px) {
-  .filter {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: auto;
-    grid-column-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
-    justify-content: space-around;
-  }
-}
-
-@media only screen and (max-width: 649px) {
-  .addressForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0.5rem;
-  }
-  .bothButtons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: space-around;
-  }
-}
-
-/* .addressForm {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  padding-top: 0.5rem;
-} */
 
 .bothButtons {
   display: flex;
@@ -164,6 +128,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .LoginMessage {
   background-color: var(--color3);
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .map_container {
@@ -174,11 +141,29 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 3%;
 }
 
+
 .overlay {
   top: 50%;
   left: 40%;
   z-index: 1;
   opacity: 85%;
+}
+
+.allStationCards{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.loginBox{
+  margin-top: 5rem;
+}
+
+.signUpBox{
+  margin-top: 5rem;
 }
 
 /* .addressForm {
@@ -187,33 +172,140 @@ input[type="number"]::-webkit-outer-spin-button {
 } */
 
 /**
-* The following styles are for the loader graphic
-*/
-.pulse {
-  width: 20vh;
-  height: 20vh;
-  position: absolute;
-  transform: rotate(45deg);
+/*spinner below */
+
+.spinner {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   top:50%;
+   left: 50%;
 }
 
-.pulse:before,
-.pulse:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50% 50% 0 50%;
-  background: var(--color2);
-  -webkit-mask: radial-gradient(circle 17.6px at 50% 50%, #0000 94%, #000);
+.spinner div {
+   position: absolute;
+   width: 50%;
+   height: 150%;
+   background: var(--color1);
+   transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+   animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
 }
 
-.pulse:after {
-  animation: pulse-ytk0dhhg 1s infinite;
-  transform: perspective(528px) translateZ(0px);
+.spinner div:nth-child(1) {
+   --delay: 0.1;
+   --rotation: 36;
+   --translation: 150;
 }
 
-@keyframes pulse-ytk0dhhg {
-  to {
-    transform: perspective(528px) translateZ(264px);
-    opacity: 0;
+.spinner div:nth-child(2) {
+   --delay: 0.2;
+   --rotation: 72;
+   --translation: 150;
+}
+
+.spinner div:nth-child(3) {
+   --delay: 0.3;
+   --rotation: 108;
+   --translation: 150;
+}
+
+.spinner div:nth-child(4) {
+   --delay: 0.4;
+   --rotation: 144;
+   --translation: 150;
+}
+
+.spinner div:nth-child(5) {
+   --delay: 0.5;
+   --rotation: 180;
+   --translation: 150;
+}
+
+.spinner div:nth-child(6) {
+   --delay: 0.6;
+   --rotation: 216;
+   --translation: 150;
+}
+
+.spinner div:nth-child(7) {
+   --delay: 0.7;
+   --rotation: 252;
+   --translation: 150;
+}
+
+.spinner div:nth-child(8) {
+   --delay: 0.8;
+   --rotation: 288;
+   --translation: 150;
+}
+
+.spinner div:nth-child(9) {
+   --delay: 0.9;
+   --rotation: 324;
+   --translation: 150;
+}
+
+.spinner div:nth-child(10) {
+   --delay: 1;
+   --rotation: 360;
+   --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+   0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+   }
+
+   50% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+   }
+}
+
+@media only screen and (min-width: 650px) {
+  .filter {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around;
   }
+}
+
+.StationName{
+  border-bottom: solid 1px black;
+}
+
+@media only screen and (max-width: 649px) {
+  .addressForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  .bothButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  .StationName{
+    font-size: 1.2rem;
+    border-bottom: solid 1px black;
+  }
+
+  .StationAddress{
+    font-size: 1rem;
+  }
+
+  .FuelPrice{
+    font-size: 2rem;
+  }
+
+  .FuelTimeUpdated{
+    font-size: 0.8rem;
+  }
+
 }

@@ -13,7 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
-    <>
+    <div className="App">
       {/* <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
@@ -30,7 +30,7 @@ function App() {
               </Routes>
             </AuthProvider>
           </Router>
-    </>
+    </div>
   );
 
 

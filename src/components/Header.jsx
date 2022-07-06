@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <h1>Fuely</h1>
+      <h1 className="title">Fuely</h1>
       <p>
         {currentUser ? (
           <>

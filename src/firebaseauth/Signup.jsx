@@ -35,7 +35,7 @@ export default function Signup() {
   return (
     <>
       <Container className="d-flex align-items-center justify-content-center">
-        <Card>
+        <Card className="signUpBox">
           <Card.Body>
             <h2 className="text-center mb-4">Sign Up</h2>
             {error && <Alert variant="danger">{error}</Alert>}
