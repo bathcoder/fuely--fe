@@ -62,23 +62,28 @@ const Filter = ({
     <div className="filter">
       
       <div className="addressForm">
-        <form className="addressInput" onSubmit={(e) => handleAddressSubmit(e)}>
-          <input type="text" name="address" placeholder="Enter an address" />
+        <form onSubmit={(e) => handleAddressSubmit(e)}>
+          <input className="addressInput" type="text" name="address" placeholder="Enter an address" />
           <button className="addressButton" type="submit">Search</button>
         </form>
       </div>
-      <div className="bothButtons">
+
+      <div className="viewMapButton">
         <button
           className="viewButton ListSortButtons mapListButton"
           onClick={mapListToggle}
         >
           {displayType === "map" ? "View List" : "View Map"}
+
         </button>
+        </div>
 
         {displayType === "map" ? (
-          <div className="sortButton"></div>
+          // <div className="sortButton"></div>
+          null
+
         ) : (
-          <div>
+          <div className='sortByPriceButton'>
             <button
               className="viewButton ListSortButtons sortButton"
               onClick={sortStationsByPrice}
@@ -86,8 +91,9 @@ const Filter = ({
               Sort by price
             </button>
           </div>
+
         )}
-      </div>
+
     </div>
   );
 };

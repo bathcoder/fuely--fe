@@ -53,62 +53,6 @@
   text-align: right;
 }
 
-.viewButton {
-  margin: 2% 5%;
-  
-  color: var(--color1);
-  /* border: var(--color1) solid 1px; */
-  border: solid 2px red;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  background: radial-gradient(closest-side, var(--color3), var(--color5));
-  width: 5rem;
-  height: 4rem;
-}
-
-.bothButtons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-
-.addressInput {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  padding-top: 0.5rem;
-}
-
-.addressButton{
-padding:0.1rem;
-border:black solid 1px;
-background-color: var(--color3);
-color:black;
-border-radius:5px;
-width:auto;
-margin:0.1rem;
-}
-
-
-
-.UpdatePriceButton {
-  margin: 0.2rem;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .header {
   /* display flex and space evenly horizontally*/
   display: flex;
@@ -120,6 +64,118 @@ input[type="number"]::-webkit-outer-spin-button {
   font-weight: bold;
   font-size: 1rem;
 }
+/*************************************************/
+@media only screen and (min-width: 881px) {
+  .filter {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .filter {
+    display: grid;
+    grid-template-areas:
+    'a a'
+    'b c';
+  }
+
+    /* grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around; */
+
+  .addressForm {
+    grid-area: a;
+  }
+  .viewMapButton {
+    grid-area: b;
+  }
+
+  .sortByPriceButton {
+    grid-area: c;
+  }
+  
+
+}
+
+.viewMapButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.sortByPriceButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+
+
+.addressForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+
+.viewButton {
+  margin: 2% 5%;
+  color: var(--color1);
+  /* border: var(--color1) solid 1px; */
+  border: solid 1px var(--color1);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  background: radial-gradient(closest-side, var(--color3), var(--color5));
+  width: 5rem;
+  height: 4rem;
+}
+
+
+.addressInput {
+  border-radius:5px;
+  border: solid 1px var(--color1);
+}
+
+.addressButton{
+padding:0.1rem;
+border: solid 1px var(--color1);
+background-color: var(--color3);
+color:black;
+border-radius:5px;
+width:auto;
+margin:0.1rem;
+
+}
+
+
+
+
+
+
+
+
+
+.UpdatePriceButton {
+  margin: 0.2rem;
+}
+
 
 .listBackground {
   background-color: var(--color3);
@@ -158,6 +214,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 }
 
+
+
 .loginBox{
   margin-top: 5rem;
 }
@@ -166,13 +224,8 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-top: 5rem;
 }
 
-/* .addressForm {
-  vertical-align: middle;
 
-} */
 
-/**
-/*spinner below */
 
 .spinner {
    position: absolute;
@@ -261,29 +314,13 @@ input[type="number"]::-webkit-outer-spin-button {
    }
 }
 
-@media only screen and (min-width: 650px) {
-  .filter {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: auto;
-    grid-column-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
-    justify-content: space-around;
-  }
-}
+
 
 .StationName{
   border-bottom: solid 1px black;
 }
 
-@media only screen and (max-width: 649px) {
-  .addressForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0.5rem;
-  }
+@media only screen and (max-width: 880px) {
   .bothButtons {
     display: flex;
     flex-direction: row;

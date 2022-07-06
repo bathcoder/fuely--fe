@@ -9,7 +9,7 @@ const List = ({ allStations, coords }) => {
 
   return (
     <div className="allStationCards">
-      {currentUser ? null : <LoginMessage />}
+      <LoginMessage />
 
       {!allStations.length ? (
         <>
