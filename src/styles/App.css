@@ -9,11 +9,12 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Home {
-  background-color: var(--color2);
+  background-image: linear-gradient(var(--color2), var(--color3));
+  
 }
 
 .App {
@@ -59,10 +60,80 @@
   text-align: center;
 }
 
-.filter {
+/* .filter {
   display: flex;
-  margin: 0.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+} */
+
+@media only screen and (min-width: 650px) {
+  .filter {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+  }
 }
+
+@media only screen and (max-width: 649px) {
+  .addressForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  .bothButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+
+/* .addressForm {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-top: 0.5rem;
+} */
+
+.bothButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.addressInput {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-top: 0.5rem;
+}
+
+.addressButton{
+padding:0.1rem;
+border:black solid 1px;
+background-color: var(--color3);
+color:black;
+border-radius:5px;
+width:auto;
+margin:0.1rem;
+}
+
+
 
 .UpdatePriceButton {
   margin: 0.2rem;
@@ -100,7 +171,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 90vh;
   width: auto;
   border: solid var(--color1) 2px;
-  border-radius: 7%;
+  border-radius: 3%;
 }
 
 .overlay {
@@ -108,8 +179,12 @@ input[type="number"]::-webkit-outer-spin-button {
   left: 40%;
   z-index: 1;
   opacity: 85%;
-  
 }
+
+/* .addressForm {
+  vertical-align: middle;
+
+} */
 
 /**
 * The following styles are for the loader graphic
