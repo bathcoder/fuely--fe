@@ -35,7 +35,7 @@ npm i
 
 4. Create a Google API key. You can find more information on https://developers.google.com/maps/documentation/javascript/get-api-key
 
-5. In the public directory, create 2 files and call them: 1) .env 2) .env.local
+5. In the root directory, create 2 files and call them: 1) .env 2) .env.local
 
 6. In the .env file, add to line 1: REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY='YOURAPIKEYHERE'
 
