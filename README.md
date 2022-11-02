@@ -6,6 +6,8 @@ This web application was put together by team-418, made up of George Baldock, Pa
 
 The hosted version of the app is: https://fuely.netlify.app/
 
+(If the map is failing to load the API keys have expired, please contact one of the developers)
+
 The backend can be found at: https://github.com/Alhariri97/be-fuely
 
 The hosted backend can be found at: https://fuely.herokuapp.com/
